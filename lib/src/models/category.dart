@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:test_app/src/widgets/title.dart';
 
 class Category {
   final String name;
-  final String image;
 
-  Category({@required this.name, @required this.image});
+
+
+  Category(  {@required this.name });
 
 }

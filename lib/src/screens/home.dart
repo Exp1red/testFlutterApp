@@ -14,57 +14,40 @@ import '../commons.dart';
    @override
    Widget build(BuildContext context) {
      return Scaffold(
-       backgroundColor: white,
+       backgroundColor: black,
        body: SafeArea(
          child: ListView(
            children: <Widget>[
              Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: <Widget>[
-                 Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: CustomText(
-                       text: "Delivery App" ,
-                       size:  20,
+
+                 Stack (
+                   children: <Widget>[
+                     IconButton (icon: Icon (Icons.keyboard_backspace), color: white , iconSize: 32,  onPressed: (){},  )
+                   ],
+                 ),
+
+                 CustomText(
+                       text: "Бургер Кинг" ,
+                       size:  19,
+                       color: white,
                        weight: FontWeight.bold,
-                 )),
+                 ),
+
                  Stack(
                    children: <Widget>[
-                     IconButton(icon: Icon( Icons.notifications_none), onPressed:(){} ),
+                     IconButton(icon: Icon( Icons.info_outline),color: white, iconSize: 30, onPressed:(){} ),
+
                    ],
                  )//Notification
                ],
-             ),//Welcome Tile
-             SizedBox(height: 5),
-             Container(
-               decoration: BoxDecoration(
-                 color: white,
-                 boxShadow: [
-                   BoxShadow(
-                      color: grey[300],
-                      offset: Offset(1, 1),
-                      blurRadius: 4
-                   )
-                 ]
-               ),
-               child: ListTile(
-                 leading: Icon(Icons.search , color:  red ),
-                 title: TextField(
-                   decoration: InputDecoration(
-                     hintText: "Find food",
-                     border: InputBorder.none
-                   ),
-                 ),
-               ),
-             ),//Search
+             ),//Header
              SizedBox(height: 5),
              Categories(),
-             SizedBox(height: 1),
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: CustomText (text: "Food from category" , size: 14),
-             ),//Food from ${category.name}
              Scrolls(),
+
+
            ],
          ),
        ),
